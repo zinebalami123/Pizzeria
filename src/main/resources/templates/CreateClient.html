@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="Template.html">
+<head>
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/5.3.3/css/bootstrap.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Creation</title>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#">Navbar</a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</head>
+<body>
+<div layout:fragment="content">
+<main class="container mt-5">
+    <form th:action="@{saveClient}" method="post">
+        <div class="form-group">
+            <label class ="form-label" for="firstName">First Name : </label>
+            <input class="form-control" type="text" id="firstName" name="firstName">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="lastName">Last Name : </label>
+            <input class="form-control" type="text" id="lastName" name="lastName">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="email">Email : </label>
+            <input class="form-control" type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="phoneNumber">Phone Number : </label>
+            <input class="form-control" type="tel" id="phoneNumber" name="phoneNumber">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="address">Address : </label>
+            <input class="form-control" type="text" id="address" name="address">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="city">City : </label>
+            <input class="form-control" type="text" id="city" name="city">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="postalCode">Postal Code : </label>
+            <input class="form-control" type="text" id="postalCode" name="postalCode">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="country">Country : </label>
+            <input class="form-control" type="text" id="country" name="country">
+        </div>
+        <div class="form-group">
+            <input class="form-control btn btn-primary" type="submit" value="Save">
+        </div>
+    </form>
+
+</main>
+</div>
+</body>
+</html>

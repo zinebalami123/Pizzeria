@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="Template.html"
+>
+<head>
+    <link rel="stylesheet" type="text/css"
+          href="webjars/bootstrap/5.3.3/css/bootstrap.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Edition</title>
+</head>
+<body>
+<div layout:fragment="content">
+<main class="container mt-5">
+
+    <form th:action="@{updateClient}" method="post">
+        <div class="form-group">
+            <label class ="form-label" hidden="hidden" for="id">id : </label>
+            <input class="form-control" hidden="hidden" type="text" id="id" name="id" th:value="${clientView.id}">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="firstName">First Name : </label>
+            <input class="form-control" type="text" id="firstName" name="firstName" th:value="${clientView.firstName}">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="lastName">Last Name : </label>
+            <input type="text" id="lastName" name="lastName" th:value="${clientView.lastName}">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="email">Email : </label>
+            <input class="form-control" type="email" id="email" name="email" th:value="${clientView.email}">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="phoneNumber">Phone Number : </label>
+            <input class="form-control" type="tel" id="phoneNumber" name="phoneNumber" th:value="${clientView.phoneNumber}">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="address">Address : </label>
+            <input class="form-control" type="text" id="address" name="address" th:value="${clientView.address}">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="city">City : </label>
+            <input class="form-control" type="text" id="city" name="city" th:value="${clientView.city}">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="postalCode">Postal Code : </label>
+            <input class="form-control" type="text" id="postalCode" name="postalCode" th:value="${clientView.postalCode}">
+        </div>
+        <div class="form-group">
+            <label class ="form-label" for="country">Country : </label>
+            <input class="form-control" type="text" id="country" name="country" th:value="${clientView.country}">
+        </div>
+        <div>
+            <input class="form-control btn btn-primary " type="submit" value="Update">
+        </div>
+    </form>
+
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients List</title>
+    <!-- Custom CSS -->
+    <style>
+        /* Custom styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #fff;
+        }
+        .jumbotron {
+            background-color: #007bff;
+            color: #fff;
+            padding: 2rem 0;
+            margin-bottom: 20px;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 2rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<div layout:fragment="content">
+
+<main class="container mt-3 mb-5">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Postal Code</th>
+            <th>Country</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="client:${clients.content}">
+            <td th:text="${client.id}"></td>
+            <td th:text="${client.firstname}"></td>
+            <td th:text="${client.lastname}"></td>
+            <td th:text="${client.email}"></td>
+            <td th:text="${client.phoneNumber}"></td>
+            <td th:text="${client.address}"></td>
+            <td th:text="${client.city}"></td>
+            <td th:text="${client.postalCode}"></td>
+            <td th:text="${client.country}"></td>
+            <td>
+                <a class="btn btn-danger "
+                   th:href="@{deleteClient(id=${client.id})}"
+                   onclick="return confirm('Are you sure to delete this client?')">Delete</a>
+                <a class="btn btn-success"
+                   th:href="@{EditClient(id=${client.id})}">
+                    Edit
+                </a>
+
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <ul class= "nav nav-pills">
+        <li th:each="page,status:${pages}">
+            <a th:class="${status.index==currentPage?'btn btn-primary':'btn'}"
+            th:href="@{clientList(page=${status.index}, size=${size})}"
+               th:text="${status.index}"
+            >
+            </a>
+
+        </li>
+    </ul>
+</main>
+
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.min.js"></script>
+</body>
+</html>

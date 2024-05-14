@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/5.3.3/css/bootstrap.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pizza Categories</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .category-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .category-list li {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            width: calc(31% - 10px); /* Adjust the width to fit 3 items per row */
+            box-sizing: border-box; /* Include padding and border in the element's total width */
+            display: flex; /* Permet d'aligner l'image et le texte horizontalement */
+            align-items: center; /* Centre les éléments verticalement */
+            margin-right: -10px; /* Remove the space between items on the same row */
+            margin-bottom: -10px; /* Remove the space between rows */
+        }
+        .category-list li img {
+            width: 100px; /* Change the width to your desired size */
+            height: auto; /* Keep the height auto to maintain the aspect ratio */
+            border-radius: 50%; /* Keep the border radius to maintain the rounded corners */
+            margin-right: 10px; /* Keep the margin right to maintain the spacing */
+        }
+        .category-list li:hover {
+            background-color: #f0f0f0;
+        }
+        .category-list li a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 10px; /* Ajoute un espace entre l'image et le texte */
+        }
+        .pizza-icon {
+            width: 100px; /* Change the width to your desired size */
+            height: auto; /* Keep the height auto to maintain the aspect ratio */
+            border-radius: 50%; /* Keep the border radius to maintain the rounded corners */
+            margin-right: 10px; /* Keep the margin right to maintain the spacing */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Pizza Categories</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="category-list">
+                <li>
+                    <img class="pizza-icon" src="../static/images/pizza-1.jpg" alt="Vegetarian Pizza">
+                    <a href="#">Vegetarian</a>
+                </li>
+                <li>
+                    <img src="../static/images/pizza-2.jpg" alt="Margherita Pizza">
+                    <a href="#">Margherita</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="category-list">
+                <li>
+                    <img src="../static/images/pizza-3.jpg" alt="Pepperoni Pizza">
+                    <a href="#">Pepperoni</a>
+                </li>
+                <!-- Ajoutez d'autres catégories ici -->
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <ul class="category-list">
+                <li>
+                    <img src="../static/images/pizza-4.jpg" alt="Carbonara Pizza">
+                    <a href="#">Carbonara</a>
+                </li>
+                <!-- Ajoutez d'autres catégories ici -->
+            </ul>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
